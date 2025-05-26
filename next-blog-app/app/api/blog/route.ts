@@ -1,8 +1,8 @@
 import { ConnectDB } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { writeFile } from "fs";
-import { title } from "process";
 import BlogModel from "@/lib/models/BlogModel";
+import fs from "fs";
 
 const LoadDB = async () => {
   await ConnectDB();
@@ -62,5 +62,19 @@ export async function POST(request: Request) {
   return NextResponse.json(
     { success: true, msg: "Blog Added" },
     { status: 201 }
+  );
+}
+
+// API to delete a blog post
+export async function DELETE(request: Request) {
+  const id = request.nextUrl.searchParams.get("id");
+  const blog = await BlogModel.findById(id);
+
+  fs.unlink(`./public/${blog.image}`, () => {});
+
+  await BlogModel.findByIdAndDelete(id);
+  return NextResponse.json(
+    { success: true, msg: "Blog Deleted" },
+    { status: 200 }
   );
 }
