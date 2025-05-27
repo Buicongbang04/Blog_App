@@ -1,5 +1,5 @@
 "use client";
-import { assets, blog_data } from "@/Assets/assets";
+import { assets } from "@/Assets/assets";
 import { StaticImageData } from "next/image";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
