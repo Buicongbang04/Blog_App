@@ -75,67 +75,11 @@ const Page = () => {
           alt="Blog image"
           className="border-4 border-white "
         />
-        <h1 className="my-8 text-[26px] font-semibold">Introduction</h1>
-        <p>{data.description}</p>
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 1: Self-Reflection and Goal Setting
-        </h3>
-        <p className="my-3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-          praesentium, quidem iure, nemo qui eum rerum ea dolorum voluptas
-          suscipit dignissimos hic cupiditate veritatis itaque obcaecati
-          molestiae blanditiis eaque necessitatibus?
-        </p>
-        <p className="my-3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-          praesentium, quidem iure, nemo qui eum rerum ea dolorum voluptas
-          suscipit dignissimos hic cupiditate veritatis itaque obcaecati
-          molestiae blanditiis eaque necessitatibus?
-        </p>
 
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 2: Self-Reflection and Goal Setting
-        </h3>
-        <p className="my-3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-          praesentium, quidem iure, nemo qui eum rerum ea dolorum voluptas
-          suscipit dignissimos hic cupiditate veritatis itaque obcaecati
-          molestiae blanditiis eaque necessitatibus?
-        </p>
-        <p className="my-3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-          praesentium, quidem iure, nemo qui eum rerum ea dolorum voluptas
-          suscipit dignissimos hic cupiditate veritatis itaque obcaecati
-          molestiae blanditiis eaque necessitatibus?
-        </p>
-
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 3: Self-Reflection and Goal Setting
-        </h3>
-        <p className="my-3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-          praesentium, quidem iure, nemo qui eum rerum ea dolorum voluptas
-          suscipit dignissimos hic cupiditate veritatis itaque obcaecati
-          molestiae blanditiis eaque necessitatibus?
-        </p>
-        <p className="my-3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-          praesentium, quidem iure, nemo qui eum rerum ea dolorum voluptas
-          suscipit dignissimos hic cupiditate veritatis itaque obcaecati
-          molestiae blanditiis eaque necessitatibus?
-        </p>
-
-        <h3 className="my-5 text-[18px] font-semibold">Conclusion</h3>
-        <p className="my-3">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit
-          exercitationem minima ullam labore, provident delectus neque cum earum
-          qui obcaecati doloribus, eos culpa adipisci officia numquam vel
-          laudantium dolor, quam laborum eveniet accusamus nostrum? Quaerat
-          architecto molestiae maxime necessitatibus totam blanditiis aperiam,
-          accusamus fugit debitis, ipsa voluptatem amet iusto laboriosam
-          voluptate provident officiis obcaecati libero impedit rem repellat
-          nostrum nemo!
-        </p>
+        <div
+          className="blog-content"
+          dangerouslySetInnerHTML={{ __html: data.description }}
+        ></div>
 
         <div className="my-24">
           <p className="text-black font-semibold my-4">

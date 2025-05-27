@@ -6,11 +6,16 @@ import { toast } from "react-toastify";
 
 const Header = () => {
   const [email, setEmail] = useState("");
-  const onSubmitHandler = async (e) => {
+  interface EmailResponse {
+    success: boolean;
+    msg: string;
+  }
+
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("email", email);
-    const response = await axios.post("/api/email", formData);
+    const response = await axios.post<EmailResponse>("/api/email", formData);
     if (response.data.success) {
       setEmail("");
       toast.success(response.data.msg);

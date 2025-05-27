@@ -20,3 +20,28 @@ export async function POST(request: Request) {
     msg: "Email saved successfully",
   });
 }
+
+export async function GET(request: Request) {
+  const emails = await EmailModel.find({});
+
+  if (!emails) {
+    return NextResponse.json({
+      success: false,
+      msg: "No emails found",
+    });
+  }
+
+  return NextResponse.json({
+    success: true,
+    data: emails,
+  });
+}
+
+export async function DELETE(request: Request) {
+  const id = await request.nextUrl.searchParams.get("id");
+  await EmailModel.findByIdAndDelete(id);
+  return NextResponse.json({
+    success: true,
+    msg: "Email deleted successfully",
+  });
+}
